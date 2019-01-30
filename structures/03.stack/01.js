@@ -42,3 +42,19 @@ console.log(`this stack1 is: ${stack1.dataStore}`)
 console.log(`statck1 pop: ${stack1.pop()}`)
 console.log(`pop after peak is: ${stack1.peak()}`)
 console.log(`pop after stack1 is: ${stack1.dataStore}`)
+
+
+// 用栈模拟递归
+function fact (n) {
+    let stack2 = new Stack()
+    while (n > 1) {
+        stack2.push(n--)
+    }
+    let result = 1
+    while (stack2.length() > 0) {
+        result *= stack2.pop()
+    }
+    return result
+}
+
+console.log(' fact result is: ', fact(5))
